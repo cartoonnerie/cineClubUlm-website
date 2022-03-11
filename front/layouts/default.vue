@@ -1,14 +1,12 @@
 <template>
-<div class="layout">
-  <Header />
-  <div class="container mx-auto">
-    <Nuxt />
+  <div class="layout bg-gray-100">
+    <nav-bar />
+    <div class="container mx-auto">
+      <slot />
+    </div>
   </div>
-</div>
 </template>
 
 <script>
-export default {
-  
-}
+export default {}
 </script>

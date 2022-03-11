@@ -4,10 +4,8 @@ WORKDIR /front
 
 COPY package*.json ./
 
-RUN ls
-
-RUN npm install
+RUN yarn install
 
 EXPOSE 3000
 
-CMD [ "npm", "run", "dev" ]
+CMD [ "yarn", "dev" ]

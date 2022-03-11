@@ -1,9 +1,9 @@
 <template>
-  <Tutorial />
+  <div
+    class="relative items-top justify-center min-h-screen bg-gray-100 sm:items-center sm:pt-0"
+  >
+    <MainMovie />
+  </div>
 </template>
 
-<script lang="ts">
-import Vue from 'vue'
-
-export default Vue.extend({})
-</script>
+<script setup lang="ts"></script>
