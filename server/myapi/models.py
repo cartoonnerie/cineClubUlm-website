@@ -5,8 +5,8 @@ TODO implement validators
 - nullable or sure
 """
 
-class Film(models.Model):
 
+class Film(models.Model):
     class MovieFormat(models.TextChoices):
         ANALOG_35 = '35mm'
         DVD = 'DVD'
@@ -34,4 +34,3 @@ class Film(models.Model):
 
     def __str__(self):
         return f'{self.title} de {self.director} ({self.projection_date.strftime("%d/%m/%Y")})'
-
