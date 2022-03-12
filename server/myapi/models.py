@@ -18,7 +18,7 @@ class Film(models.Model):
 
     projection_date = models.DateTimeField()
     title = models.CharField(max_length=60)
-    actors = models.JSONField(default="[]")
+    actors = models.JSONField(default=list)
     director = models.CharField(max_length=60)
     duration = models.DurationField()
     synopsis = models.TextField()
@@ -33,5 +33,5 @@ class Film(models.Model):
     is_confirmed = models.BooleanField(default=False)
 
     def __str__(self):
-        return f'{self.title} de {self.director} ({projection_date.strftime("%d/%m/%Y")})'
+        return f'{self.title} de {self.director} ({self.projection_date.strftime("%d/%m/%Y")})'
 
