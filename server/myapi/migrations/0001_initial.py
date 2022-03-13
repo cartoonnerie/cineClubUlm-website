@@ -7,29 +7,52 @@ class Migration(migrations.Migration):
 
     initial = True
 
-    dependencies = [
-    ]
+    dependencies = []
 
     operations = [
         migrations.CreateModel(
-            name='Film',
+            name="Film",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('projection_date', models.DateTimeField()),
-                ('title', models.CharField(max_length=60)),
-                ('actors', models.JSONField(default='[]')),
-                ('director', models.CharField(max_length=60)),
-                ('duration', models.DurationField()),
-                ('synopsis', models.TextField()),
-                ('origin_country', models.CharField(max_length=60)),
-                ('release_year', models.SmallIntegerField()),
-                ('trailer_link', models.URLField()),
-                ('is_in_color', models.BooleanField()),
-                ('movie_format', models.CharField(choices=[('35mm', 'Analog 35'), ('DVD', 'Dvd'), ('Blu ray', 'Blu Ray')], max_length=20)),
-                ('language_subtitles', models.CharField(choices=[('VOF', 'French'), ('VOSTFR', 'Foreign')], max_length=20)),
-                ('poster_link', models.URLField()),
-                ('banner_link', models.URLField()),
-                ('is_confirmed', models.BooleanField(default=False)),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("projection_date", models.DateTimeField()),
+                ("title", models.CharField(max_length=60)),
+                ("actors", models.JSONField(default="[]")),
+                ("director", models.CharField(max_length=60)),
+                ("duration", models.DurationField()),
+                ("synopsis", models.TextField()),
+                ("origin_country", models.CharField(max_length=60)),
+                ("release_year", models.SmallIntegerField()),
+                ("trailer_link", models.URLField()),
+                ("is_in_color", models.BooleanField()),
+                (
+                    "movie_format",
+                    models.CharField(
+                        choices=[
+                            ("35mm", "Analog 35"),
+                            ("DVD", "Dvd"),
+                            ("Blu ray", "Blu Ray"),
+                        ],
+                        max_length=20,
+                    ),
+                ),
+                (
+                    "language_subtitles",
+                    models.CharField(
+                        choices=[("VOF", "French"), ("VOSTFR", "Foreign")],
+                        max_length=20,
+                    ),
+                ),
+                ("poster_link", models.URLField()),
+                ("banner_link", models.URLField()),
+                ("is_confirmed", models.BooleanField(default=False)),
             ],
         ),
     ]

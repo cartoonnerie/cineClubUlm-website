@@ -8,13 +8,13 @@ TODO implement validators
 
 class Film(models.Model):
     class MovieFormat(models.TextChoices):
-        ANALOG_35 = '35mm'
-        DVD = 'DVD'
-        BLU_RAY = 'Blu ray'
+        ANALOG_35 = "35mm"
+        DVD = "DVD"
+        BLU_RAY = "Blu ray"
 
     class LanguageSubtitles(models.TextChoices):
-        FRENCH = 'VOF'
-        FOREIGN = 'VOSTFR'
+        FRENCH = "VOF"
+        FOREIGN = "VOSTFR"
 
     projection_date = models.DateTimeField()
     title = models.CharField(max_length=60)
@@ -27,7 +27,9 @@ class Film(models.Model):
     trailer_link = models.URLField()
     is_in_color = models.BooleanField()
     movie_format = models.CharField(max_length=20, choices=MovieFormat.choices)
-    language_subtitles = models.CharField(max_length=20, choices=LanguageSubtitles.choices)
+    language_subtitles = models.CharField(
+        max_length=20, choices=LanguageSubtitles.choices
+    )
     poster_link = models.URLField()
     banner_link = models.URLField()
     is_confirmed = models.BooleanField(default=False)
