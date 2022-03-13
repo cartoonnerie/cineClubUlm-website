@@ -1,0 +1,20 @@
+\centerline{\date{% templatetag openbrace %}{{ film.projection_date|date:"l d F Y" }}, {{ film.projection_date|time:"H\hi" }}}
+\centerline{Salle Dussane}
+\centerline{\emph{\Large {{ film.title }}}}
+\centerline{% templatetag openbrace %}{{ film.director }} ({{ film.release_year }})}
+\medskip
+\centerline{% templatetag openbrace %}{{ film.actors }}}
+\medskip
+\centerline{% templatetag openbrace %}{{ film.movie_format }} . {{ film.language_subtitles }}}
+\medskip
+\centerline{\textit{% templatetag openbrace %}{{ film.duration }} minutes}}
+
+\medskip
+\medskip
+\centerline{~{{ prices.one_exte }}€~/~{{ prices.one_cof }}~€ COF}
+\medskip
+
+\centerline{\includegraphics[width=5cm]{cine}}
+
+\medskip \medskip
+{{ film.synopsis }}
