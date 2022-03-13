@@ -9,6 +9,7 @@ class PlainTextRenderer(renderers.BaseRenderer):
     def render(self, data, media_type=None, renderer_context=None):
         return smart_str(data, encoding=self.charset)
 
+
 class LatexRenderer(PlainTextRenderer):
     media_type = 'text/x-tex'
     format = 'tex'
