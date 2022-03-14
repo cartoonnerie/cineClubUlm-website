@@ -1,13 +1,15 @@
+{% load film_tags %}
+
 \centerline{\date{% templatetag openbrace %}{{ film.projection_date|date:"l d F Y" }}, {{ film.projection_date|time:"H\hi" }}}
 \centerline{Salle Dussane}
 \centerline{\emph{\Large {{ film.title }}}}
 \centerline{% templatetag openbrace %}{{ film.director }} ({{ film.release_year }})}
 \medskip
-\centerline{% templatetag openbrace %}{{ film.actors }}}
+\centerline{% templatetag openbrace %}{% list_actors film.actors %}}
 \medskip
 \centerline{% templatetag openbrace %}{{ film.movie_format }} . {{ film.language_subtitles }}}
 \medskip
-\centerline{\textit{% templatetag openbrace %}{{ film.duration }} minutes}}
+\centerline{\textit{% templatetag openbrace %}{{ film.duration|movie_duration }}}}
 
 \medskip
 \medskip
