@@ -11,3 +11,7 @@ def render_com(template_name, film: Film) -> str:
 
 def bocal(film: Film) -> str:
     return render_com("bocal.tex", film)
+
+
+def facebook(film: Film) -> str:
+    return render_com("facebook.txt", film)

@@ -1,0 +1,14 @@
+{% load film_tags %}
+
+{{ film.title }} - {{ film.director }}
+{{ film.synopsis }}
+Durée : {{ film.duration|movie_duration }}
+{% color_display film.is_in_color %}
+Pays : {{ film.origin_country }}
+{{ film.movie_format }} . {{ film.language_subtitles }}
+Année : {{ film.release_year }}
+Avec : {% list_actors film.actors %}
+
+Plus d'informations sur notre site Internet http://www.cineclub.ens.fr/category/seances/
+Comme d’habitude, l’entrée coûte {{ prices.one_exte }}€, {{ prices.one_cof }}€ pour les membres du COF (association d'élèves de l'ENS). L’entrée est gratuite pour les membres du Programme Étudiant⋅e⋅s Invité⋅e⋅s.
+L'accès est ouvert à tous ; pas besoin d'être à l'ENS !

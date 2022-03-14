@@ -19,3 +19,9 @@ class FilmViewSet(viewsets.ModelViewSet):
         film: Film = self.get_object()
         bocal_text = com.bocal(film)
         return Response(bocal_text)
+
+    @action(detail=True, renderer_classes=[PlainTextRenderer], methods=["GET"])
+    def facebook(self, request, pk=None):
+        film: Film = self.get_object()
+        fb_text = com.facebook(film)
+        return Response(fb_text)
