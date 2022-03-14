@@ -29,3 +29,7 @@ class FilmViewSet(viewsets.ModelViewSet):
     @action(detail=True, renderer_classes=[PlainTextRenderer], methods=["GET"])
     def facebook(self, request, pk=None):
         return self.general_com_view(com.facebook)
+
+    @action(detail=True, renderer_classes=[StaticHTMLRenderer], methods=["GET"])
+    def newsletter(self, request, pk=None):
+        return self.general_com_view(com.mail)

@@ -15,3 +15,7 @@ def bocal(film: Film) -> str:
 
 def facebook(film: Film) -> str:
     return render_com("facebook.txt", film)
+
+
+def mail(film: Film) -> str:
+    return render_com("mail.html", film)

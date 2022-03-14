@@ -1,0 +1,37 @@
+{% load film_tags %}
+
+<html><body text="#000000" bgcolor="#FFFFFF"><div style="font-family: arial,helvetica,sans-serif;font-size: 12pt; color: #000000 ">
+    <small><i>Ce mail contient du HTML. Si vous ne pouvez pas le lire, allez sur notre site : <a
+                class="moz-txt-link-freetext" href="http://www.cineclub.ens.fr"
+                target="_blank">http://www.cineclub.ens.fr</a></i></small>
+    <p>Bonjour à toutes et à tous,</p>
+    <p style="text-align:justify">
+        Retrouvez-nous en salle Dussane <b>{{ film.projection_date|date:"l d F Y" }}, {{ film.projection_date|time:"H\hi" }}</b> !
+        Comme d'habitude, l'entrée coûte <b>{{ prices.one_exte }}€, {{ prices.one_cof }}€</b> pour les membres du COF et vous avez la possibilité d'acheter des cartes de 10 places pour respectivement {{ prices.card_exte }}€ et {{ prices.card_cof }}€. L'entrée est gratuite pour les membres du Programme Étudiant⋅e⋅s Invité⋅e⋅s.</p>
+
+    <div style="border:grey 1px solid; padding:5px; text-align:justify; margin-top:15px; margin-bottom:15px">
+        <center>
+            <b><i>{{ film.title }}</i></b> de <b>{{ film.director }}</b><br>
+        </center>
+        <!-- Commentaire pertinent quelconque vis-à-vis du film -->
+        <br><b>Durée </b>: {{ film.duration|movie_duration }}<br>
+        <b>{% color_display film.is_in_color %}</b> <br>
+        <b>Pays :</b> {{ film.origin_country }}<br>
+        <b>{{ film.movie_format }} . {{ film.language_subtitles }}</b><br>
+        <b>Année :</b> {{ film.release_year }}<br>
+        <b>Avec :</b> {% list_actors film.actors %}<br>
+        <b>Rapide synopsis :</b>
+        <span class="entry-synopsis">{{ film.synopsis }}</span><br>
+        <!-- Commentaire pertinent quelconque vis-à-vis du film -->
+    </div>
+
+    <p style="text-align:justify">Vous ne pouvez pas venir à cette séance mais vous aimeriez aller au ciné-club une prochaine fois ?<br>
+        <a href="http://cineclub.ens.fr/calendrier" title="Découvrez le calendrier de nos prochaines séances." target="_blank">Découvrez le calendrier de nos prochaines séances.</a></p>
+    <p>À très bientôt en salle Dussane !<br>
+        L'équipe du ciné-club<br> <a href="http://cineclub.ens.fr" title="http://cineclub.ens.fr" target="_blank">http://cineclub.ens.fr</a></p>
+    <p>Toutes les séances du ciné-club se déroulent en salle Dussane, au 45 rue d'Ulm, Paris. <br>
+        Métro : Luxembourg, Place Monge. Bus: Feuillantine.</p>
+    <small style="text-align:center">Vous ne souhaitez plus recevoir notre newsletter ? <a
+                href="mailto:sympa@lists.ens.psl.eu?subject=UNSUBSCRIBE%20cineclub-informations&body=Envoyez%20ce%20mail%20pour%20terminer%20de%20vous%20d%C3%A9sinscrire"
+                target="_blank">Désinscrivez-vous</a></small>
+</div></body></html>
