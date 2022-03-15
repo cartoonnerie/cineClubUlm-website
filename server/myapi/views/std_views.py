@@ -26,9 +26,14 @@ class FilmViewSet(viewsets.ModelViewSet):
     def bocal(self, request, pk=None):
         return self.general_com_view(com.bocal)
 
-    @action(detail=True, renderer_classes=[PlainTextRenderer], methods=["GET"])
+    @action(detail=True, methods=["GET"])
     def facebook(self, request, pk=None):
-        return self.general_com_view(com.facebook)
+        film: Film = self.get_object()
+        fb_text = com.facebook_text(film)
+        fb_title = com.facebook_title(film)
+        return Response(
+            {"title": fb_title, "body": fb_text, "banner_link": film.banner_link}
+        )
 
     @action(detail=True, renderer_classes=[StaticHTMLRenderer], methods=["GET"])
     def newsletter(self, request, pk=None):
