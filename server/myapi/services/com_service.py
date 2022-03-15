@@ -26,3 +26,7 @@ def facebook_title(film: Film) -> str:
 
 def mail(film: Film) -> str:
     return render_com("mail.html", film)
+
+
+def ics(film: Film) -> str:
+    return render_com("ics.md", film)

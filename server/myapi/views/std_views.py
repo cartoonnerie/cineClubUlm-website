@@ -38,3 +38,7 @@ class FilmViewSet(viewsets.ModelViewSet):
     @action(detail=True, renderer_classes=[StaticHTMLRenderer], methods=["GET"])
     def newsletter(self, request, pk=None):
         return self.general_com_view(com.mail)
+
+    @action(detail=True, methods=["GET"], renderer_classes=[PlainTextRenderer])
+    def ics(self, request, pk=None):
+        return self.general_com_view(com.ics)
