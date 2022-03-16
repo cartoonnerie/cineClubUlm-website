@@ -2,7 +2,7 @@
   <nav class="navbar" role="navigation" aria-label="main navigation">
     <div class="navbar-brand">
       <nuxt-link class="navbar-item" to="index">
-        <img src="~/assets/img/logo.png" width="112" height="28" />
+        <img src="~/assets/img/logo.png" />
       </nuxt-link>
       <a
         role="button"
@@ -57,3 +57,15 @@ const menuItems = ref([
 
 const isBurgerOpen = ref(false)
 </script>
+
+<style lang="sass" scoped>
+@include desktop
+  .navbar
+    padding: 0 2rem
+
+.navbar-item img
+  object-fit: contain
+  @include desktop
+    max-height: 5rem
+    padding: 0 // necessary ?
+</style>

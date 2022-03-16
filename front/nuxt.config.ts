@@ -18,6 +18,15 @@ export default defineNuxtConfig({
   },
 
   css: ["@/css/app.sass"],
+  vite: {
+    css: {
+      preprocessorOptions: {
+        sass: {
+          additionalData: `@import "@/css/tools.sass" \n`,
+        },
+      },
+    },
+  },
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
