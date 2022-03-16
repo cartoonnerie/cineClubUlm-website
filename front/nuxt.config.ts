@@ -17,6 +17,8 @@ export default defineNuxtConfig({
     link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }],
   },
 
+  css: ["@/css/app.sass"],
+
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
     // https://go.nuxtjs.dev/axios
@@ -27,9 +29,4 @@ export default defineNuxtConfig({
   axios: {
     proxyHeaders: false,
   },
-
-  buildModules: [
-    // https://go.nuxtjs.dev/tailwindcss
-    "@nuxtjs/tailwindcss",
-  ],
 })

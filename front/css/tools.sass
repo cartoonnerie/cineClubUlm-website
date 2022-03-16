@@ -1,0 +1,24 @@
+
+// COLORS
+$yellow: #FFE08A
+$green: #427931
+$cyan: #93C5FD
+$blue: #2E738E
+$purple: #9550AD
+$red: #C34728
+$grey: #777777
+$primary: $cyan
+$info: $blue
+$link: $purple
+
+// we use svg icons and have to adjust the height inside buttons
+.button
+  .icon
+    &,
+    &.is-small,
+    &.is-medium,
+    &.is-large
+      height: 1.2em !important
+
+// Import only what you need from Bulma
+@import "../node_modules/bulma/sass/utilities/_all.sass"
