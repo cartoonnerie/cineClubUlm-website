@@ -1,46 +1,59 @@
 <template>
-  <div class="header w-full h-48">
-    <div class="overlay h-full from-gray-100 bg-gradient-to-t via-transparent">
-      <div class="container mx-auto h-full flex flex-col justify-end p-5">
-        <ul class="flex flex-row justify-between">
-          <li v-for="(menuItem, index) of menuItems" :key="index">
-            <nuxt-link :to="menuItem.link">
-              {{ menuItem.label }}
-            </nuxt-link>
-          </li>
-        </ul>
+  <nav class="navbar" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+      <nuxt-link class="navbar-item" to="index">
+        <img src="~/assets/img/logo.png" width="112" height="28" />
+      </nuxt-link>
+      <a
+        role="button"
+        class="navbar-burger"
+        aria-label="menu"
+        aria-expanded="false"
+        @click="isBurgerOpen = !isBurgerOpen"
+      >
+        <!-- the next three lines are meant for the burger menu -->
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
+    </div>
+
+    <div class="navbar-menu" :class="{ 'is-active': isBurgerOpen }">
+      <div class="navbar-start">
+        <nuxt-link
+          v-for="(menuItem, index) of menuItems"
+          :key="index"
+          class="navbar-item"
+          :to="menuItem.link"
+        >
+          {{ menuItem.label }}
+        </nuxt-link>
+      </div>
+
+      <div class="navbar-end">
+        <div class="navbar-item">
+          <a class="button is-light"> Log in </a>
+        </div>
       </div>
     </div>
-  </div>
+  </nav>
 </template>
 
-<script>
-export default {
-  data() {
-    return {
-      menuItems: [
-        {
-          label: "Accueil",
-          link: "/",
-        },
-        {
-          label: "À venir",
-          link: "/a-venir",
-        },
-        {
-          label: "À props",
-          link: "/a-propos",
-        },
-      ],
-    }
+<script setup lang="ts">
+const menuItems = ref([
+  {
+    label: "Accueil",
+    link: "/",
   },
-}
+  {
+    label: "À venir",
+    link: "/a-venir",
+  },
+  {
+    label: "À props",
+    link: "/a-propos",
+  },
+])
+
+const isBurgerOpen = ref(false)
 </script>
-
-<style scoped>
-.header {
-  background-image: url("/images/banner.jpg");
-
-  @apply uppercase text-gray-600;
-}
-</style>
